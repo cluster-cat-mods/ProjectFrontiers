@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float MovementSpeed;
     [SerializeField] float MaxSpeed;
     private bool JumpRequested = false;
-    private int JumpTimes = 2;
+    private int JumpAmount = 2;
     private bool isGrounded;
 
     void Start()
@@ -20,16 +20,20 @@ public class Movement : MonoBehaviour
         {
             JumpRequested = true;
         }
+        if (isGrounded == true)
+        {
+            JumpAmount = 1;
+        }
     }
     private void FixedUpdate()
     {
         isGrounded = Physics.Raycast(body.position, Vector3.down, 1.1f);
         Debug.DrawRay(body.position, Vector3.down * 0.6f, Color.red, 0, false);
 
-        if (JumpRequested == true && isGrounded == true)
+        if (JumpRequested == true && JumpAmount > 0)
         {
             body.AddForce(0, JumpForce, 0, ForceMode.VelocityChange);
-            JumpTimes--;
+            JumpAmount--;
             JumpRequested = false;
         }
 

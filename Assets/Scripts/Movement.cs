@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics.Raycast(body.position, Vector3.down, 1.1f);
-        Debug.DrawRay(body.position, Vector3.down * 0.6f, Color.red, 0, false);
+        Debug.DrawRay(body.position, Vector3.down * 0.95f, Color.red, 0, false);
 
         if (JumpRequested == true && JumpAmount > 0)
         {

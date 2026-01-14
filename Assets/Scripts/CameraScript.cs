@@ -11,19 +11,22 @@ public class CameraScript : MonoBehaviour
     private bool zoomBool = false;
     private Camera cam;
     private CinemachineCamera vcam;
+    private CinemachineRotationComposer rotComp;
     private Transform followTransform;
 
     public void DoCameraZoom(GameObject objectP)
     {
         zoomBool = !zoomBool;
-        vcam = objectP.transform.GetChild(0).GetComponent<CinemachineCamera>();
         if (objectP != startPoint)
         {
-            vcam.LookAt = objectP.transform;
+            rotComp.enabled = false;
+            vcam.transform.position = objectP.transform.GetChild(0).transform.position;
+            vcam.transform.rotation = objectP.transform.GetChild(0).transform.rotation;
         }
         else
         {
-            vcam.LookAt = followTransform;
+            rotComp.enabled = true;
+            vcam.transform.position = objectP.transform.position;
         }
     }
 
@@ -31,6 +34,7 @@ public class CameraScript : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         vcam = FindFirstObjectByType<CinemachineCamera>();
+        rotComp = vcam.GetComponent<CinemachineRotationComposer>();
         if (vcam == null)
         {
             Debug.LogError("No vcam found");

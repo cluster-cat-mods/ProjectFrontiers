@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics.Raycast(body.position, Vector3.down, 1.1f);
-        Debug.DrawRay(body.position, Vector3.down * 0.95f, Color.red, 0, false);
+        Debug.DrawRay(body.position, Vector3.down * 1.05f, Color.red, 0, false);
 
         if (JumpRequested == true && JumpAmount > 0)
         {
@@ -37,12 +37,12 @@ public class Movement : MonoBehaviour
             JumpRequested = false;
         }
 
-        if (Input.GetKey("d") && body.linearVelocity.magnitude < MaxSpeed)
+        if ((Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow)) && body.linearVelocity.magnitude < MaxSpeed)
         {
             body.AddForce(Vector3.right * MovementSpeed);
             Debug.Log(body.linearVelocity.magnitude);
         }
-        if (Input.GetKey("a") && body.linearVelocity.magnitude < MaxSpeed)
+        if ((Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow)) && body.linearVelocity.magnitude < MaxSpeed)
         {
             body.AddForce(Vector3.left * MovementSpeed);
             Debug.Log(body.linearVelocity.magnitude);

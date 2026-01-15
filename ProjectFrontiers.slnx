@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="xyperine.IconsCreator.Editor.csproj" />
+  <Project Path="xyperine.IconsCreator.Editor.Tests.csproj" />
+</Solution>

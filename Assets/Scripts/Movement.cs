@@ -6,8 +6,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float JumpForce;
     [SerializeField] float MovementSpeed;
     [SerializeField] float MaxSpeed;
+    [SerializeField] float JumpTime = 100;
     private bool JumpRequested = false;
-    private int JumpAmount = 2;
     private bool isGrounded;
 
     void Start()
@@ -16,13 +16,13 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             JumpRequested = true;
         }
         if (isGrounded == true)
         {
-            JumpAmount = 1;
+            JumpTime = 100;
         }
     }
     private void FixedUpdate()
@@ -30,11 +30,12 @@ public class Movement : MonoBehaviour
         isGrounded = Physics.Raycast(body.position, Vector3.down, 1.1f);
         Debug.DrawRay(body.position, Vector3.down * 1.05f, Color.red, 0, false);
 
-        if (JumpRequested == true && JumpAmount > 0)
+        if (JumpRequested == true && JumpTime > 0)
         {
-            body.AddForce(0, JumpForce, 0, ForceMode.VelocityChange);
-            JumpAmount--;
+            body.AddForce(0, JumpForce, 0);
+            JumpTime--;
             JumpRequested = false;
+            Debug.Log(body.linearVelocity.magnitude);
         }
 
         if ((Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow)) && body.linearVelocity.magnitude < MaxSpeed)

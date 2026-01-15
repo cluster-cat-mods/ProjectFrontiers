@@ -32,13 +32,13 @@ public class MovingPlatform : MonoBehaviour
 
     private void HorizontalMove()
     {
-        Vector3 positionoffset = new Vector3(amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0, 0);
-        transform.position = startPos + positionoffset;
+        Vector3 positionoffset = startPos +new Vector3(amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0, 0);
+        rb.MovePosition(positionoffset);
     }
 
     private void VerticalMove()
     {
-        Vector3 positionoffset = new Vector3(0, amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0);
-        transform.position = startPos + positionoffset;
+        Vector3 positionoffset = startPos + new Vector3(0, amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0);
+        rb.MovePosition(positionoffset);
     }
 }

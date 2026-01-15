@@ -458,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostUpAmount
-      value: 0.9
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostClockTime

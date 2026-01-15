@@ -1,19 +1,24 @@
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private Rigidbody rb;
-    [SerializeField] float boostForce;
-    [SerializeField] float boostResistance;
-    [SerializeField] float boostUpAmount;
-    [SerializeField] float boostForwardAmount;
-    [SerializeField] float boostClockTime;
-    [SerializeField] float boostRegenModifier;
-    [SerializeField] float moveForce;
-    [SerializeField] float moveResistance;
-    [SerializeField] float maxHeight;
-    [SerializeField] float airWalkingHeigt;
+    [Header("Movement Settings")]
+    [SerializeField][Min(0)] float moveForce;
+    [SerializeField][Min(0)] float moveResistance;
+    [SerializeField][Min(0)] float airWalkingHeight;
 
+    [Header("Boost Settings")]
+    [SerializeField][Min(0)] float boostForce;
+    [SerializeField][Range(0, 1)] float boostUpAmount;
+    [SerializeField][Range(0, 1)] float boostForwardAmount;
+    [SerializeField][Min(0)] float boostResistance;
+    [SerializeField][Min(0)] float boostClockTime;
+    [SerializeField][Min(0)] float boostRegenModifier;
+    [SerializeField][Min(0)] float maxHeight;
+
+    private Rigidbody rb;
     private int moveDirection;
     private bool boostBool;
     private float boostTime;
@@ -91,7 +96,7 @@ public class Movement : MonoBehaviour
             boostTime += Time.deltaTime * boostRegenModifier;
         }
 
-        if (moveDirection != 0 && height < airWalkingHeigt)
+        if (moveDirection != 0 && height < airWalkingHeight)
         {
             rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
         }

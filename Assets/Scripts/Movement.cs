@@ -5,18 +5,34 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] float boostForce;
     [SerializeField] float boostResistance;
+    [SerializeField] float boostUpAmount;
+    [SerializeField] float boostForwardAmount;
+    [SerializeField] float boostClockTime;
+    [SerializeField] float boostRegenModifier;
     [SerializeField] float moveForce;
     [SerializeField] float moveResistance;
     [SerializeField] float maxHeight;
+    [SerializeField] float airWalkingHeigt;
 
     private int moveDirection;
     private bool boostBool;
-
+    private float boostTime;
     private float height;
+    private float groundDistance;
+
+    private void SetGroundHeigt()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            groundDistance = hit.distance;
+        }
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        SetGroundHeigt();
     }
     private void Update()
     {
@@ -59,17 +75,23 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (boostBool == true)
+        Ray ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Ray ray = new Ray(transform.position, transform.up *  -1);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                height = hit.distance;
-                rb.AddForce(new Vector3(0, boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y, 0));
-            }
+            height = hit.distance - groundDistance;
         }
 
-        if (moveDirection != 0)
+        if (boostBool == true && boostTime > 0)
+        {
+            rb.AddForce(new Vector3(boostForwardAmount * moveDirection, boostUpAmount, 0) * (boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y));
+            boostTime -= Time.deltaTime;
+        }
+        else if (boostBool == false && boostTime < boostClockTime)
+        {
+            boostTime += Time.deltaTime * boostRegenModifier;
+        }
+
+        if (moveDirection != 0 && height < airWalkingHeigt)
         {
             rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
         }
@@ -77,9 +99,20 @@ public class Movement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Ray ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * 5f);
+        }else
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * 5f);
+        }
+
         Gizmos.color = Color.gray;
-        Gizmos.DrawSphere(transform.position, 0.25f);
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.up * -1);
+        Gizmos.DrawSphere(ray.origin, 0.2f);
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(hit.point, 0.1f);
     }
 }

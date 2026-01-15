@@ -2,53 +2,84 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Rigidbody body;
-    [SerializeField] float JumpForce;
-    [SerializeField] float MovementSpeed;
-    [SerializeField] float MaxSpeed;
-    [SerializeField] float JumpTime = 100;
-    private bool JumpRequested = false;
-    private bool isGrounded;
+    private Rigidbody rb;
+    [SerializeField] float boostForce;
+    [SerializeField] float boostResistance;
+    [SerializeField] float moveForce;
+    [SerializeField] float moveResistance;
+    [SerializeField] float maxHeight;
+
+    private int moveDirection;
+    private bool boostBool;
+
+    private float height;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            JumpRequested = true;
+            boostBool = true;
         }
-        if (isGrounded == true)
+        else
         {
-            JumpTime = 100;
+            boostBool = false;
+        }
+
+
+        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
+        {
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
+            {
+                moveDirection = 0;
+            }
+            else
+            {
+                moveDirection = 1;
+            }
+        }
+        else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
+        {
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
+            {
+                moveDirection = 0;
+            }
+            else
+            {
+                moveDirection = -1;
+            }
+        }
+        else
+        {
+            moveDirection = 0;
         }
     }
     private void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(body.position, Vector3.down, 1.1f);
-        Debug.DrawRay(body.position, Vector3.down * 1.05f, Color.red, 0, false);
-
-        if (JumpRequested == true && JumpTime > 0)
+        if (boostBool == true)
         {
-            body.AddForce(0, JumpForce, 0);
-            JumpTime--;
-            JumpRequested = false;
-            Debug.Log(body.linearVelocity.magnitude);
+            Ray ray = new Ray(transform.position, transform.up *  -1);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                height = hit.distance;
+                rb.AddForce(new Vector3(0, boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y, 0));
+            }
         }
 
-        if ((Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow)) && body.linearVelocity.magnitude < MaxSpeed)
+        if (moveDirection != 0)
         {
-            body.AddForce(Vector3.right * MovementSpeed);
-            Debug.Log(body.linearVelocity.magnitude);
+            rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
         }
-        if ((Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow)) && body.linearVelocity.magnitude < MaxSpeed)
-        {
-            body.AddForce(Vector3.left * MovementSpeed);
-            Debug.Log(body.linearVelocity.magnitude);
-        }
-
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.gray;
+        Gizmos.DrawSphere(transform.position, 0.25f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.up * -1);
+    }
 }

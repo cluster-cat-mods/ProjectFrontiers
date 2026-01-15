@@ -9,19 +9,16 @@ public class TriggerEventInvoker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!enabled) return;
         OnTriggerEnterEvent.Invoke();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!enabled) return;
         OnTriggerStayEvent.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!enabled) return;
         OnTriggerExitEvent.Invoke();
     }
 }

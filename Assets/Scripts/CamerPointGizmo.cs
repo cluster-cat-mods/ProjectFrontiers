@@ -1,7 +1,7 @@
 using System.IO.Compression;
 using UnityEngine;
 
-public class CamerpointGiizmo : MonoBehaviour
+public class CameraPointGizmo : MonoBehaviour
 {
     private void OnDrawGizmos()
     {

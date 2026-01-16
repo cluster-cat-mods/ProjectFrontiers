@@ -1,44 +1,78 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
+using System;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [SerializeField] float amplitude;
-    [SerializeField] float phase;
-    [SerializeField] float obstacleSpeed;
-    [SerializeField] bool Horizontal = false;
-    [SerializeField] bool Vertical = false;
-    Vector3 startPos;
-    private Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private enum moveTypes
     {
-        startPos = transform.position;
-        rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;
+        Cycle,
+        PingPong
+    }
+    [SerializeField] private moveTypes moveType;
+    [SerializeField] private List<MovePoint> movePoints;
+    [SerializeField] private float sensitivity;
+
+    private int listPos = 0;
+    private bool cycleDirectionBool = true;
+
+    private void MoveToPoint(MovePoint movePointP)
+    {
+        Vector3 offset = movePointP.point.transform.position - transform.position;
+        transform.Translate(offset * movePointP.speed * Time.deltaTime);
     }
 
-    // Update is called once per frame
+    private void ListCycle()
+    {
+        if (moveType == moveTypes.PingPong)
+        {
+            if (listPos >= movePoints.Count - 1 || listPos <= movePoints.Count - 1)
+            {
+                cycleDirectionBool = !cycleDirectionBool;
+            }
+            if (cycleDirectionBool)
+            {
+                listPos++;
+            }
+            else
+            {
+                listPos--;
+            }
+        }
+        if (moveType == moveTypes.Cycle)
+        {
+            if (listPos >= movePoints.Count - 1)
+            {
+                listPos = 0;
+            }
+            else
+            {
+                listPos++;
+            }
+        }
+    }
     void Update()
     {
-        if (Horizontal == true)
+        if (Vector3.Distance(transform.position, movePoints[listPos].point.transform.position) <= sensitivity)
         {
-            HorizontalMove();
+            ListCycle();
         }
-        if (Vertical == true)
-        {
-            VerticalMove();
-        }
+        MoveToPoint(movePoints[listPos]);
     }
 
-    private void HorizontalMove()
+    private void OnDrawGizmos()
     {
-        Vector3 positionoffset = startPos +new Vector3(amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0, 0);
-        rb.MovePosition(positionoffset);
+        Gizmos.color = Color.purple;
+        Gizmos.DrawCube(transform.position, transform.localScale * 0.8f);
     }
 
-    private void VerticalMove()
-    {
-        Vector3 positionoffset = startPos + new Vector3(0, amplitude * Mathf.Sin((Time.time - phase) * obstacleSpeed), 0);
-        rb.MovePosition(positionoffset);
-    }
+}
+
+[Serializable]
+public class MovePoint
+{
+    public GameObject point;
+    public float speed;
+
 }

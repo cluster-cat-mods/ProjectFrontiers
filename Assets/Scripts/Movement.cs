@@ -23,21 +23,11 @@ public class Movement : MonoBehaviour
     private bool boostBool;
     private float boostTime;
     private float height;
-    private float groundDistance;
-
-    private void SetGroundHeigt()
-    {
-        Ray ray = new Ray(transform.position, -transform.up);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            groundDistance = hit.distance;
-        }
-    }
+    private bool groundBool;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        SetGroundHeigt();
     }
     private void Update()
     {
@@ -78,12 +68,37 @@ public class Movement : MonoBehaviour
             moveDirection = 0;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            groundBool = true;
+        }
+        if (collision.collider.tag == "Platform")
+        {
+            groundBool = true;
+            transform.SetParent(collision.transform);
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.tag == "Ground")
+        {
+            groundBool = false;
+        }
+        if (collision.collider.tag == "Platform")
+        {
+            groundBool = true;
+            transform.SetParent(null);
+        }
+    }
     private void FixedUpdate()
     {
         Ray ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            height = hit.distance - groundDistance;
+            float height = hit.distance;
         }
 
         if (boostBool == true && boostTime > 0)
@@ -91,12 +106,12 @@ public class Movement : MonoBehaviour
             rb.AddForce(new Vector3(boostForwardAmount * moveDirection, boostUpAmount, 0) * (boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y));
             boostTime -= Time.deltaTime;
         }
-        else if (boostBool == false && boostTime < boostClockTime)
+        else if (boostBool == false && groundBool && boostTime < boostClockTime)
         {
             boostTime += Time.deltaTime * boostRegenModifier;
         }
 
-        if (moveDirection != 0 && height < airWalkingHeight)
+        if (moveDirection != 0 && groundBool)
         {
             rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
         }

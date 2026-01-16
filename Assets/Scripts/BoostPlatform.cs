@@ -2,12 +2,20 @@ using UnityEngine;
 
 public class BoostPlatform : MonoBehaviour
 {
-    [SerializeField] float boostPowerVertical;
-    [SerializeField] float boostPowerHorizontal;
-    public Rigidbody rb;
+    [SerializeField] Vector3 boostDirection;
+    [SerializeField][Min(0)] float boostForce;
+    private Rigidbody rb;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision other)
     {
-        rb.AddForce(boostPowerHorizontal, boostPowerVertical, 0, ForceMode.Impulse);
+        rb = other.rigidbody;
+        rb.linearVelocity = rb.linearVelocity.magnitude * boostDirection;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + boostDirection);
     }
 }

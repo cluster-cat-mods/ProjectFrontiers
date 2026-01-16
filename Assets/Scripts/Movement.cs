@@ -103,7 +103,7 @@ public class Movement : MonoBehaviour
 
         if (boostBool == true && boostTime > 0)
         {
-            rb.AddForce(new Vector3(boostForwardAmount * moveDirection, boostUpAmount, 0) * (boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y));
+            rb.AddForce(new Vector3(boostForwardAmount * -moveDirection, boostUpAmount, 0) * (boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y));
             boostTime -= Time.deltaTime;
         }
         else if (boostBool == false && groundBool && boostTime < boostClockTime)

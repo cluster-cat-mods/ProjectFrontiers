@@ -8698,7 +8698,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 464146458}
+  m_Mesh: {fileID: 716036466}
 --- !u!33 &645675955
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -10419,6 +10419,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+--- !u!1 &794191199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4786196935126809927, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+  m_PrefabInstance: {fileID: 794191198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801995199
 GameObject:
   m_ObjectHideFlags: 0
@@ -21590,6 +21595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852402891}
   - component: {fileID: 1852402892}
+  - component: {fileID: 1852402893}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -21626,7 +21632,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIFunctions
   UIEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 794191199}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1852402893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852402890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd806998a8cfae4b8045b634a5a0a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseChecker
+  pauseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 794191199}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  UnpauseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 794191199}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &1853111388
 Mesh:
   m_ObjectHideFlags: 0

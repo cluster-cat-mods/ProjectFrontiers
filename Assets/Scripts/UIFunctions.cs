@@ -19,4 +19,21 @@ public class UIFunctions : MonoBehaviour
     {
         UIEvent.Invoke();
     }
+
+    public void PauseGame()
+    {
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void ToggleGameObject(GameObject obj)
+    {
+        obj.SetActive(!obj.activeSelf);
+    }
 }

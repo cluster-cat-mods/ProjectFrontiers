@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 34075552}
   m_Layer: 0
   m_Name: Floor 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 161066344}
   m_Layer: 0
   m_Name: BoostPlatform 6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1778,9 +1778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostPowerVertical: 0
-  boostPowerHorizontal: 1000
-  rb: {fileID: 1330261794}
+  boostDirection: {x: 0, y: 0, z: 0}
+  boostForce: 0
 --- !u!65 &161066345
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2409,7 +2408,7 @@ GameObject:
   - component: {fileID: 196550258}
   m_Layer: 0
   m_Name: Slope 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2892,7 +2891,7 @@ GameObject:
   - component: {fileID: 222697286}
   m_Layer: 0
   m_Name: Roof 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4244,7 +4243,7 @@ GameObject:
   - component: {fileID: 288246765}
   m_Layer: 0
   m_Name: Prism 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6047,7 +6046,7 @@ GameObject:
   - component: {fileID: 478665935}
   m_Layer: 0
   m_Name: BoostPlatform 4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6064,9 +6063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostPowerVertical: 500
-  boostPowerHorizontal: 1000
-  rb: {fileID: 1330261794}
+  boostDirection: {x: 0, y: 0, z: 0}
+  boostForce: 0
 --- !u!65 &478665936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7498,7 +7496,7 @@ GameObject:
   - component: {fileID: 579572944}
   m_Layer: 0
   m_Name: Platform 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9013,7 +9011,7 @@ GameObject:
   - component: {fileID: 675302554}
   m_Layer: 0
   m_Name: Platform 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9547,7 +9545,7 @@ GameObject:
   - component: {fileID: 725315193}
   m_Layer: 0
   m_Name: Prism
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10330,9 +10328,93 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainUIv1
       objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1852402892}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466353286977391387, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4786196935126809927, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1852402892}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 794191199}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5584002987251307415, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7398913694254981383, guid: a00f6b49d7a8bd542b74556ec064862f, type: 3}
       propertyPath: m_Pivot.x
@@ -10938,7 +11020,7 @@ GameObject:
   - component: {fileID: 808153622}
   m_Layer: 0
   m_Name: Clutch 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11650,7 +11732,7 @@ GameObject:
   - component: {fileID: 912805403}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12339,7 +12421,7 @@ GameObject:
   - component: {fileID: 928144431}
   m_Layer: 0
   m_Name: Floor 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13401,7 +13483,7 @@ GameObject:
   - component: {fileID: 1090064986}
   m_Layer: 0
   m_Name: BoostPlatform 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13418,9 +13500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostPowerVertical: 1500
-  boostPowerHorizontal: 500
-  rb: {fileID: 1330261794}
+  boostDirection: {x: 0, y: 0, z: 0}
+  boostForce: 0
 --- !u!65 &1090064987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13993,7 +14074,7 @@ GameObject:
   - component: {fileID: 1214888176}
   m_Layer: 0
   m_Name: Platform 5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15807,11 +15888,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 650156844660905255, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
   m_PrefabInstance: {fileID: 6793005575946902010}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1330261794 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 860986034072716612, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
-  m_PrefabInstance: {fileID: 6793005575946902010}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1343398703
 Mesh:
   m_ObjectHideFlags: 0
@@ -16138,7 +16214,7 @@ GameObject:
   - component: {fileID: 1367481712}
   m_Layer: 0
   m_Name: BoostPlatform 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16155,9 +16231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostPowerVertical: 800
-  boostPowerHorizontal: 1000
-  rb: {fileID: 1330261794}
+  boostDirection: {x: 0, y: 0, z: 0}
+  boostForce: 0
 --- !u!65 &1367481713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16814,7 +16889,7 @@ GameObject:
   - component: {fileID: 1414051087}
   m_Layer: 0
   m_Name: Platform 4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17831,7 +17906,7 @@ GameObject:
   - component: {fileID: 1547898598}
   m_Layer: 0
   m_Name: Slope 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18477,7 +18552,7 @@ GameObject:
   - component: {fileID: 1674446358}
   m_Layer: 0
   m_Name: Prism 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18984,7 +19059,7 @@ GameObject:
   - component: {fileID: 1713895938}
   m_Layer: 0
   m_Name: Platform 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20052,7 +20127,7 @@ GameObject:
   - component: {fileID: 1775229389}
   m_Layer: 0
   m_Name: Prism 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21657,28 +21732,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd806998a8cfae4b8045b634a5a0a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseChecker
-  pauseEvent:
+  KeyEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 794191199}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  UnpauseEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 794191199}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1852402892}
+        m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
+        m_MethodName: PauseGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21686,6 +21746,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1852402892}
+        m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
+        m_MethodName: ToggleGameObject
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 794191199}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!43 &1853111388
 Mesh:
@@ -23498,7 +23570,7 @@ GameObject:
   - component: {fileID: 2021915593}
   m_Layer: 0
   m_Name: Platform 5 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24423,7 +24495,7 @@ GameObject:
   - component: {fileID: 2087714476}
   m_Layer: 0
   m_Name: BoostPlatform 5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24455,9 +24527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostPowerVertical: 2000
-  boostPowerHorizontal: 250
-  rb: {fileID: 1330261794}
+  boostDirection: {x: 0, y: 0, z: 0}
+  boostForce: 0
 --- !u!65 &2087714477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24552,7 +24623,7 @@ GameObject:
   - component: {fileID: 2143516523}
   m_Layer: 0
   m_Name: Slope 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

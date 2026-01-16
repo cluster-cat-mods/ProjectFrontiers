@@ -12,11 +12,14 @@ public class ProximityTrigger : MonoBehaviour
         {
             Debug.Log("PopUp UI");
             EProximityTrigger.SetActive(true);
-            if(Input.GetKey("E"))
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 EButtonPress.Invoke();
             }
-        }
     }
 
     private void OnTriggerExit(Collider other)

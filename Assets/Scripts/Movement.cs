@@ -67,7 +67,6 @@ public class Movement : MonoBehaviour
         {
             moveDirection = 0;
         }
-
     }
 
     private void FixedUpdate()
@@ -98,7 +97,12 @@ public class Movement : MonoBehaviour
 
         if (boostBool == true && boostTime > 0)
         {
-            rb.AddForce(new Vector3(boostForwardAmount * -moveDirection, boostUpAmount, 0) * (boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y));
+            float bForce = boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y;
+            if (bForce < 0)
+            {
+                bForce = 0;
+            }
+            rb.AddForce(new Vector3(boostForwardAmount * -moveDirection, boostUpAmount, 0) * bForce);
             boostTime -= Time.deltaTime;
         }
         else if (boostBool == false && groundBool && boostTime < boostClockTime)
@@ -108,7 +112,13 @@ public class Movement : MonoBehaviour
 
         if (moveDirection != 0 && groundBool)
         {
-            rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
+            float mForce = moveForce - moveForce / moveResistance * rb.linearVelocity.x;
+            if (mForce < 0)
+            {
+                mForce = 0;
+            }
+            Debug.Log(mForce);
+            rb.AddForce(transform.forward * moveDirection * mForce);
         }
 
     }

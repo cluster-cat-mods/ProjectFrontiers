@@ -54,12 +54,15 @@ public class CameraScript : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit);
 
         
-        if (!zoomBool)
+        if (Input.GetMouseButtonDown(0) && !zoomBool)
         {
-            followTransform.position = hit.point;
-            if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.tag == "zoomObject")
+            if (hit.collider != null && hit.collider.tag == "zoomObject")
             {
                 DoCameraZoom(hit.collider.GameObject());
+            }
+            else
+            {
+                followTransform.position = hit.point;
             }
         }
 

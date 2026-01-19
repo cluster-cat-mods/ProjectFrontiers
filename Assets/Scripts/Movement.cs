@@ -67,38 +67,33 @@ public class Movement : MonoBehaviour
         {
             moveDirection = 0;
         }
+
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Ground")
-        {
-            groundBool = true;
-        }
-        if (collision.collider.tag == "Platform")
-        {
-            groundBool = true;
-            transform.SetParent(collision.transform);
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.tag == "Ground")
-        {
-            groundBool = false;
-        }
-        if (collision.collider.tag == "Platform")
-        {
-            groundBool = true;
-            transform.SetParent(null);
-        }
-    }
     private void FixedUpdate()
     {
         Ray ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            float height = hit.distance;
+            height = hit.distance -1;
+        }
+
+        if (height < airWalkingHeight)
+        {
+            groundBool = true;
+        }
+        else
+        {
+            groundBool = false;
+        }
+
+        if (hit.collider.tag == "Platform")
+        {
+            transform.SetParent(hit.collider.transform);
+        }
+        else
+        {
+            transform.SetParent(null);
         }
 
         if (boostBool == true && boostTime > 0)
@@ -115,6 +110,7 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce((moveForce - moveForce / moveResistance * rb.linearVelocity.x) * transform.forward * moveDirection);
         }
+
     }
 
     private void OnDrawGizmos()
@@ -122,13 +118,20 @@ public class Movement : MonoBehaviour
         Ray ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * 5f);
-        }else
+            if (groundBool)
+            {
+                Gizmos.color = Color.blue;
+            }
+            else
+            {
+                Gizmos.color = Color.green;
+            }
+        }
+        else 
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * 5f);
         }
+        Gizmos.DrawLine(ray.origin, ray.origin + ray.direction * 5f);
 
         Gizmos.color = Color.gray;
         Gizmos.DrawSphere(ray.origin, 0.2f);

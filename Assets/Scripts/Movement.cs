@@ -141,12 +141,18 @@ public class Movement : MonoBehaviour
 
         if (boostBool == true && boostTime > 0)
         {
-            float bForce = boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y;
-            if (bForce < 0)
+            float bForceUp = boostForce - boostForce * (height / maxHeight) - boostResistance * rb.linearVelocity.y;
+            float bForceForward = boostForce - boostForce - boostResistance * rb.linearVelocity.y;
+            if (bForceForward < 0)
             {
-                bForce = 0;
+                bForceForward = 0;
             }
-            rb.AddForce(new Vector3(boostForwardAmount * -moveDirection, boostUpAmount, 0) * bForce);
+            if (bForceUp < 0)
+            {
+                bForceUp = 0;
+            }
+
+            rb.AddForce(new Vector3(boostForwardAmount * -moveDirection * bForceForward, boostUpAmount * bForceUp, 0));
             boostTime -= Time.deltaTime;
         }
         else if (boostBool == false && groundBool && boostTime < boostClockTime)

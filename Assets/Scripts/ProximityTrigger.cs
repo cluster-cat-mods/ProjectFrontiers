@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ProximityTrigger : MonoBehaviour
 {
-    public GameObject EProximityTrigger;
+    public GameObject UITextObject;
     public UnityEvent EButtonPress;
 
     private void OnTriggerEnter(Collider other)
@@ -11,12 +11,12 @@ public class ProximityTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("PopUp UI");
-            EProximityTrigger.SetActive(true);
+            UITextObject.SetActive(true);
         }
     }
     private void OnTriggerStay(Collider other)
     {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKey(KeyCode.E))
             {
                 EButtonPress.Invoke();
             }
@@ -27,7 +27,7 @@ public class ProximityTrigger : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("UI go away");
-            EProximityTrigger.SetActive(false);
+            UITextObject.SetActive(false);
         }
     }
 }

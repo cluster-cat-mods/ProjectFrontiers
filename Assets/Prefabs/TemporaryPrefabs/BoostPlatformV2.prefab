@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
   boostDirection: {x: 2, y: 1, z: 0}
   boostForce: 500
+  audioClip: {fileID: 8300000, guid: 5fccc87b4d384c545923fee4bdd41ec3, type: 3}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d627a3b71eba1468c458237e616f06, type: 3}
   m_Name: DataCollected
   m_EditorClassIdentifier: Assembly-CSharp::IntVariable
-  integer: 1000
+  integer: 0

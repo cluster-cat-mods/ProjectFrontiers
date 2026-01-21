@@ -27,7 +27,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (moveType == moveTypes.PingPong)
         {
-            if (listPos >= movePoints.Count - 1 || listPos <= movePoints.Count - 1)
+            if (listPos >= movePoints.Count - 1 || listPos <= 0)
             {
                 cycleDirectionBool = !cycleDirectionBool;
             }

@@ -1,9 +1,7 @@
-using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class IntVariableChecker : MonoBehaviour
 {
@@ -31,45 +29,52 @@ public class Comparison
     public IntVariable IntVariableToCompare;
     public enum operators
     {
-        equals,
-        lower,
-        higher
+        Equals,
+        Lower,
+        Higher,
+        EqualsAndHigher,
+        EqualsAndLower
     }
-    [SerializeField] private int VariableToCompare;
     [SerializeField] private operators currentOperator;
 
     public bool Compare()
     {
+    switch(currentOperator)
+        {
+            case operators.Equals:
+                if (VariableToCheck.integer == IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.Lower:
+                if (VariableToCheck.integer < IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.Higher:
+                if (VariableToCheck.integer > IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.EqualsAndLower:
+                if (VariableToCheck.integer <= IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.EqualsAndHigher:
+                if (VariableToCheck.integer >= IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            default:
+                Debug.LogWarning("Something went wrong");
+                return false;
+        }
 
-        if (currentOperator == operators.equals)
-        {
-            if ((VariableToCheck.integer == IntVariableToCompare.integer) || (VariableToCheck.integer == VariableToCompare))
-            {
-                return true;
-            }
-            else return false;
-        }
-        else if (currentOperator == operators.lower)
-        {
-            if ((VariableToCheck.integer <= IntVariableToCompare.integer) || (VariableToCheck.integer <= VariableToCompare))
-            {
-                return true;
-            }
-            else return false;
-        }
-        else if (currentOperator == operators.higher)
-        {
-            if ((VariableToCheck.integer >= IntVariableToCompare.integer) || (VariableToCheck.integer >= VariableToCompare))
-            {
-                return true;
-            }
-            else return false;
-        }
-        else
-        {
-            Debug.LogWarning("Something went wrong");
-            return false;
-        }
     }
 }
-

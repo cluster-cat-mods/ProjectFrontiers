@@ -1,21 +1,22 @@
-using UnityEngine;
+using System;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 public class VariableUI : MonoBehaviour
 {
-    public TMP_Text VariableTextField;
-    [SerializeField] private IntVariable Variable;
-    public string TextBehindVariable;
+    private TMP_Text textField;
 
-    private void Update()
+    private void Start()
     {
-        UpdateVariable(Variable.integer);
+        textField = GetComponent<TMP_Text>();
     }
-    private void UpdateVariable(int PVariable)
+    public void SetTextField(IntVariable intVariableP)
     {
-        Variable.integer = +PVariable;
-        VariableTextField.text = Variable.integer + " " + TextBehindVariable;
+         textField.text= intVariableP.integer.ToString();
     }
-
-
+    public void SetTextField(string stringP)
+    {
+        textField.text = stringP;
+    }
 }

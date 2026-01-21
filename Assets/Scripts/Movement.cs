@@ -1,6 +1,7 @@
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Movement : MonoBehaviour
 {
@@ -18,16 +19,29 @@ public class Movement : MonoBehaviour
     [SerializeField][Min(0)] float boostRegenModifier;
     [SerializeField][Min(0)] float maxHeight;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private AudioSource boostSource;
+
+    [SerializeField] List<AudioClip> footstepAudioClips;
+    [SerializeField][Min(0)] private float stepDist;
+    [SerializeField] private AudioClip boostAudioClip;
+
     private Rigidbody rb;
+
     private int moveDirection;
     private bool boostBool;
     private float boostTime;
     private float height;
     private bool groundBool;
 
+    private Vector3 prevPos;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        boostSource.clip = boostAudioClip;
     }
     private void Update()
     {
@@ -67,6 +81,36 @@ public class Movement : MonoBehaviour
         {
             moveDirection = 0;
         }
+
+        if (groundBool && Vector3.Distance(transform.position, prevPos) > stepDist)
+        {
+            footstepSource.PlayOneShot(footstepAudioClips[Random.Range(0, footstepAudioClips.Count - 1)]);
+            prevPos = transform.position;
+        }
+
+        if (boostBool == true && boostTime > 0)
+        {
+            if (!boostSource.loop)
+            {
+                boostSource.loop = true;
+            }
+            if (!boostSource.isPlaying)
+            {
+                boostSource.Play();
+            }
+        }
+        else 
+        {
+            if (boostSource.isPlaying)
+            {
+                boostSource.Stop();
+            }
+            if (boostSource.loop)
+            {
+                boostSource.loop = false;
+            }
+        }
+
     }
 
     private void FixedUpdate()
@@ -117,7 +161,6 @@ public class Movement : MonoBehaviour
             {
                 mForce = 0;
             }
-            Debug.Log(mForce);
             rb.AddForce(transform.forward * moveDirection * mForce);
         }
 

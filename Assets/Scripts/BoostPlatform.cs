@@ -9,8 +9,11 @@ public class BoostPlatform : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        rb = other.rigidbody;
-        rb.linearVelocity = rb.linearVelocity.magnitude * boostDirection;
+        if (other.gameObject.tag == "Player")
+        {
+            rb = other.rigidbody;
+            rb.AddForce(boostForce * boostDirection);
+        }
     }
 
     private void OnDrawGizmos()

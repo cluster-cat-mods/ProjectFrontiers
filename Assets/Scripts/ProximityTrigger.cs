@@ -3,31 +3,29 @@ using UnityEngine.Events;
 
 public class ProximityTrigger : MonoBehaviour
 {
-    public GameObject UITextObject;
-    public UnityEvent EButtonPress;
+    public UnityEvent onEButtonPress;
+    public UnityEvent onTriggerEnter;
+    public UnityEvent onTriggerStay;
+    public UnityEvent onTriggerExit;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("PopUp UI");
-            UITextObject.SetActive(true);
-        }
-    }
     private void OnTriggerStay(Collider other)
     {
-            if(Input.GetKey(KeyCode.E))
-            {
-                EButtonPress.Invoke();
-            }
+        onTriggerStay.Invoke();
+        if(Input.GetKey(KeyCode.E))
+        {
+            onEButtonPress.Invoke();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        onTriggerEnter.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
-    { 
-        if(other.tag == "Player")
-        {
-            Debug.Log("UI go away");
-            UITextObject.SetActive(false);
-        }
+    {
+        onTriggerExit.Invoke();
     }
+
+
+
 }

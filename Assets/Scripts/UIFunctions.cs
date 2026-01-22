@@ -1,6 +1,10 @@
+using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -37,3 +41,4 @@ public class UIFunctions : MonoBehaviour
         obj.SetActive(!obj.activeSelf);
     }
 }
+

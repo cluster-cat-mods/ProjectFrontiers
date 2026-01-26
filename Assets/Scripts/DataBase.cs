@@ -12,6 +12,9 @@ public class DataBase : MonoBehaviour
 
     [SerializeField] private UnityEvent whileEvent;
     [SerializeField] private UnityEvent afterEvent;
+    [SerializeField] private UnityEvent insertEvent;
+    [SerializeField] private UnityEvent collectEvent;
+
 
     private float collectSpeed;
 

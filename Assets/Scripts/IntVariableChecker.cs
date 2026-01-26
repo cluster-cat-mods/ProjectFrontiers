@@ -1,48 +1,80 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class IntVariableChecker : MonoBehaviour
 {
-    public IntVariable var1;
-    public IntVariable var2;
-
-    private float var1Value;
-    private float var2Value;
-    private void Start()
-    {
-        var1Value = var1.integer;
-        var2Value = var2.integer;
-    }
-    private enum operators
-    {
-        equals,
-        lower,
-        higher
-    } private operators currentOperator;
-
+    public List<Comparison> comparisons;
     public UnityEvent onCheckEvent;
-    public void Check()
+
+    private bool allTrue = true;
+    public void check()
     {
-        if (currentOperator == operators.equals)
+        foreach (Comparison comparison in comparisons)
         {
-            if (var1Value == var2Value)
+            if(!comparison.Compare())
             {
-                onCheckEvent.Invoke();
+                allTrue = false;
             }
         }
-        if (currentOperator == operators.lower)
+        if(allTrue) onCheckEvent.Invoke();
+    }
+}
+
+[Serializable]
+public class Comparison
+{
+    public IntVariable VariableToCheck;
+    public IntVariable IntVariableToCompare;
+    public enum operators
+    {
+        Equals,
+        Lower,
+        Higher,
+        EqualsAndHigher,
+        EqualsAndLower
+    }
+    [SerializeField] private operators currentOperator;
+
+    public bool Compare()
+    {
+    switch(currentOperator)
         {
-            if (var1Value < var2Value)
-            {
-                onCheckEvent.Invoke();
-            }
+            case operators.Equals:
+                if (VariableToCheck.integer == IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.Lower:
+                if (VariableToCheck.integer < IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.Higher:
+                if (VariableToCheck.integer > IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.EqualsAndLower:
+                if (VariableToCheck.integer <= IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            case operators.EqualsAndHigher:
+                if (VariableToCheck.integer >= IntVariableToCompare.integer)
+                {
+                    return true;
+                }
+                else return false;
+            default:
+                Debug.LogWarning("Something went wrong");
+                return false;
         }
-        if (currentOperator == operators.higher)
-        {
-            if (var1Value > var2Value)
-            {
-                onCheckEvent.Invoke();
-            }
-        }
+
     }
 }

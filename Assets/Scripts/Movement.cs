@@ -2,6 +2,7 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private AudioClip boostAudioClip;
 
     private Rigidbody rb;
+    private Animator animator;
 
     private int moveDirection;
     private bool boostBool;
@@ -40,6 +42,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         boostSource.clip = boostAudioClip;
     }
@@ -48,10 +51,12 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             boostBool = true;
+            animator.SetBool("isBoosting", true);
         }
         else
         {
             boostBool = false;
+            animator.SetBool("isBoosting", false);
         }
 
 
@@ -64,6 +69,7 @@ public class Movement : MonoBehaviour
             else
             {
                 moveDirection = 1;
+                transform.rotation = Quaternion.Euler(0, -90, 0);
             }
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
@@ -75,6 +81,7 @@ public class Movement : MonoBehaviour
             else
             {
                 moveDirection = -1;
+                transform.rotation = Quaternion.Euler(0, 90, 0);
             }
         }
         else
@@ -167,9 +174,14 @@ public class Movement : MonoBehaviour
             {
                 mForce = 0;
             }
-            rb.AddForce(transform.forward * moveDirection * mForce);
-        }
+            rb.AddForce(transform.forward * mForce);
 
+            animator.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
+        }
+        else
+        {
+            animator.SetFloat("moveSpeed", 0);
+        }
     }
 
     private void OnDrawGizmos()

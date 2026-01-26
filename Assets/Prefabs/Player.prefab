@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 2551153974925152410}
   - component: {fileID: 7511359752711540469}
   - component: {fileID: 8059589930302623414}
+  - component: {fileID: 4677415612470821211}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -737,6 +738,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c539f838fe4500748a8b519fd1ba26d4, type: 3}
   stepDist: 3
   boostAudioClip: {fileID: 8300000, guid: e154b02dda5f63949bb361115913828d, type: 3}
+--- !u!114 &4677415612470821211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750830025079567366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c982b8ae778c0d14488929ae744affa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::playerRespawn
+  spawnPos: {fileID: 0}
 --- !u!1 &1808374276429253961
 GameObject:
   m_ObjectHideFlags: 0

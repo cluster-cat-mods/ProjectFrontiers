@@ -18348,11 +18348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 860986034072716612, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: m_Mass
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 860986034072716612, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: m_LinearDamping
-      value: 0.09
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1604359463255832310, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: m_Name
@@ -18368,15 +18368,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: moveForce
-      value: 350
+      value: 1050
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostForce
-      value: 5000
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostUpAmount
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostClockTime
@@ -18384,7 +18384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: moveResistance
-      value: 500
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: airWalkingHeigt
@@ -18400,7 +18400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostForwardAmount
-      value: 0.45
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7002887309209443392, guid: 9fa187b0c64787943aeddc94018a0001, type: 3}
       propertyPath: boostRegenModifier

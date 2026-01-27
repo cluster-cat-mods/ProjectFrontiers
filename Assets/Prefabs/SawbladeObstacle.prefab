@@ -343,7 +343,7 @@ MonoBehaviour:
   OnCollisionEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4677415612470821211, guid: 02e82d0206cc44d4486e8c9dac4128d3, type: 3}
+      - m_Target: {fileID: 1868459388488749141, guid: 561366528bdd5304e8184d75a923f7dc, type: 3}
         m_TargetAssemblyTypeName: playerRespawn, Assembly-CSharp
         m_MethodName: Respawn
         m_Mode: 1

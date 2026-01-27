@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class DataBase : MonoBehaviour
 {
@@ -20,9 +22,19 @@ public class DataBase : MonoBehaviour
 
     private void Start()
     {
-        collectSpeed = 1 + dataBaseMemVar.integer * 0.01f; 
+        collectSpeed = 1 + dataBaseMemVar.integer * 0.01f;
+        ResetIntVariable(playerDataVar);
+        ResetIntVariable(playerStorageVar);
+        ResetIntVariable(playerMemVar);
+        ResetIntVariable(dataBaseDataVar);
+        ResetIntVariable(dataBaseStorageVar);
+        ResetIntVariable(dataBaseMemVar);
     }
 
+    private void ResetIntVariable(IntVariable intVariableP)
+    {
+        intVariableP.integer = 0;
+    }
     public void InsertData()
     {
         dataBaseMemVar.integer = playerMemVar.integer;

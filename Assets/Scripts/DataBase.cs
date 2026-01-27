@@ -41,6 +41,7 @@ public class DataBase : MonoBehaviour
         playerMemVar.integer = 0;
         dataBaseStorageVar.integer = playerStorageVar.integer;
         playerStorageVar.integer = 0;
+        insertEvent.Invoke();
     }
 
     public void ProccesData()
@@ -58,5 +59,6 @@ public class DataBase : MonoBehaviour
     {
         playerDataVar.integer = dataBaseDataVar.integer;
         dataBaseDataVar.integer = 0;
+        collectEvent.Invoke();
     }
 }

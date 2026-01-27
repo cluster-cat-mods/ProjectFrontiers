@@ -11,5 +11,6 @@ public class playerRespawn : MonoBehaviour
     public void Respawn()
     {
         transform.position = spawnPos.transform.position;
+        Debug.Log(spawnPos);
     }
 }

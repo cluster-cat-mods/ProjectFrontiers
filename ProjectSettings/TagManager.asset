@@ -9,6 +9,8 @@ TagManager:
   - CameraPoint
   - Ground
   - Platform
+  - Foreground
+  - BackgroundObject
   layers:
   - Default
   - TransparentFX

@@ -4,31 +4,33 @@ using System;
 
 public class TimerScript : MonoBehaviour
 {
-    private bool TimerActive = false;
-    private float CurrentTime;
-    [SerializeField] private TMP_Text TimerUI;
+    private bool timerActive = false;
+    private float currentTime;
+    [SerializeField] private TMP_Text timerUI;
+    [SerializeField] FloatVariable floatVariable;
     void Start()
     {
-        CurrentTime = 0;
+        currentTime = 0;
     }
 
     void Update()
     {
-        if (TimerActive)
+        if (timerActive)
         {
-            CurrentTime = CurrentTime + Time.deltaTime;
+            currentTime = currentTime + Time.deltaTime;
+            floatVariable.Float = currentTime;
         }
-        TimeSpan time = TimeSpan.FromSeconds(CurrentTime);  
-        TimerUI.text = time.Minutes.ToString() + ": " + time.Seconds.ToString() + ": " + time.Milliseconds.ToString();
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);  
+        timerUI.text = time.Minutes.ToString() + ": " + time.Seconds.ToString() + ": " + time.Milliseconds.ToString();
     }
 
     public void StartTimer()
     {
-        TimerActive = true;
+        timerActive = true;
     }
 
     public void StopTimer()
     {
-        TimerActive = false;
+        timerActive = false;
     }
 }

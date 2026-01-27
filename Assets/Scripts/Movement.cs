@@ -123,7 +123,8 @@ public class Movement : MonoBehaviour
 
         foreach (Light boosterLight in boosterLights)
         {
-            boosterLight.color = Color.Lerp(startColor, endColor, boostTime / boostClockTime);
+            boosterLight.color = Color.Lerp(endColor, startColor, boostTime / boostClockTime);
+            Debug.Log("Booster lit up color");
         }
 
     }

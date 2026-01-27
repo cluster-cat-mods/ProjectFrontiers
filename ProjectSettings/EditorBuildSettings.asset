@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TemporaryStartScreen.unity
     guid: 5309eedc82114a94a9671f0d9b85707e
   - enabled: 1

@@ -19,6 +19,9 @@ public class Movement : MonoBehaviour
     [SerializeField][Min(0)] float boostClockTime;
     [SerializeField][Min(0)] float boostRegenModifier;
     [SerializeField][Min(0)] float maxHeight;
+    [Space][SerializeField] private Color startColor;
+    [SerializeField] private Color endColor;
+    [SerializeField] private List<Light> boosterLights;
 
     [Header("Audio Settings")]
     [SerializeField] private AudioSource footstepSource;
@@ -39,7 +42,7 @@ public class Movement : MonoBehaviour
 
     private Vector3 prevPos;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -70,7 +73,6 @@ public class Movement : MonoBehaviour
             {
                 moveDirection = 1;
                 transform.rotation = Quaternion.Euler(0, -90, 0);
-
             }
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
@@ -117,6 +119,11 @@ public class Movement : MonoBehaviour
             {
                 boostSource.loop = false;
             }
+        }
+
+        foreach (Light boosterLight in boosterLights)
+        {
+            boosterLight.color = Color.Lerp(startColor, endColor, boostTime / boostClockTime);
         }
 
     }

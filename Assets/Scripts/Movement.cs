@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
             {
                 moveDirection = 1;
                 transform.rotation = Quaternion.Euler(0, -90, 0);
+
             }
         }
         else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
@@ -175,13 +176,10 @@ public class Movement : MonoBehaviour
                 mForce = 0;
             }
             rb.AddForce(transform.forward * mForce);
-
-            animator.SetFloat("moveSpeed", Mathf.Abs(rb.linearVelocity.x));
         }
-        else
-        {
-            animator.SetFloat("moveSpeed", 0);
-        }
+        animator.SetFloat("xVel", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVel", rb.linearVelocity.y);
+        animator.SetFloat("height", height);
     }
 
     private void OnDrawGizmos()

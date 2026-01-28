@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6576136f78cb7ae4f9b0ffaa0df7f2c8, type: 3}
-  m_Name: Time
-  m_EditorClassIdentifier: Assembly-CSharp::FloatVariable
-  fl: 0
+  m_Script: {fileID: 11500000, guid: 05d627a3b71eba1468c458237e616f06, type: 3}
+  m_Name: HighestScore
+  m_EditorClassIdentifier: Assembly-CSharp::IntVariable
+  integer: 0

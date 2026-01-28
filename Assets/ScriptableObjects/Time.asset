@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6576136f78cb7ae4f9b0ffaa0df7f2c8, type: 3}
   m_Name: Time
   m_EditorClassIdentifier: Assembly-CSharp::FloatVariable
-  Float: 0
+  fl: 0

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class DataBase : MonoBehaviour
 {
@@ -17,12 +18,11 @@ public class DataBase : MonoBehaviour
     [SerializeField] private UnityEvent insertEvent;
     [SerializeField] private UnityEvent collectEvent;
 
-
     private float collectSpeed;
+    private bool isProccesing = false;
 
     private void Start()
     {
-        collectSpeed = 1 + dataBaseMemVar.integer * 0.01f;
         ResetIntVariable(playerDataVar);
         ResetIntVariable(playerStorageVar);
         ResetIntVariable(playerMemVar);
@@ -31,32 +31,52 @@ public class DataBase : MonoBehaviour
         ResetIntVariable(dataBaseMemVar);
     }
 
+    private void Update()
+    {
+        if (isProccesing)
+        {
+            Debug.Log("proccesing data");
+
+            int amount = Mathf.Max(1, Mathf.RoundToInt(collectSpeed * Time.deltaTime));
+            dataBaseStorageVar.integer -= amount;
+            dataBaseDataVar.integer += amount;
+            Mathf.Max(0, dataBaseStorageVar.integer);
+            whileEvent.Invoke();
+            if (dataBaseStorageVar.integer <= 0)
+            {
+                isProccesing = false;
+                afterEvent.Invoke();
+            }
+        }
+    }
+
     private void ResetIntVariable(IntVariable intVariableP)
     {
         intVariableP.integer = 0;
     }
     public void InsertData()
     {
+        Debug.Log("inserted data");
+
         dataBaseMemVar.integer = playerMemVar.integer;
         playerMemVar.integer = 0;
         dataBaseStorageVar.integer = playerStorageVar.integer;
         playerStorageVar.integer = 0;
+        collectSpeed = 1 + dataBaseMemVar.integer * 0.01f;
         insertEvent.Invoke();
     }
 
-    public void ProccesData()
+    public void StartDataProccesing()
     {
-        while (dataBaseStorageVar.integer > 0)
-        {
-            dataBaseStorageVar.integer -= Mathf.RoundToInt(collectSpeed * Time.deltaTime);
-            dataBaseDataVar.integer += Mathf.RoundToInt(collectSpeed * Time.deltaTime);
-            whileEvent.Invoke();
+        if (!isProccesing)
+        { 
+            isProccesing = true;
         }
-        afterEvent.Invoke();
     }
-
     public void CollectData()
     {
+        Debug.Log("collected data");
+
         playerDataVar.integer = dataBaseDataVar.integer;
         dataBaseDataVar.integer = 0;
         collectEvent.Invoke();

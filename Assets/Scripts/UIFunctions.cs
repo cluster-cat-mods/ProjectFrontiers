@@ -8,12 +8,20 @@ using UnityEngine.UIElements;
 
 public class UIFunctions : MonoBehaviour
 {
-    public UnityEvent UIEvent;
-    public void SceneLoader(string sceneName)
+    [SerializeField] private UnityEvent UIEvent;
+    [SerializeField] float sceneLoadWaitDuration;
+
+    private string sceneName;
+    private void SceneLoader()
     {
         SceneManager.LoadScene(sceneName);
     }
 
+    public void LoadScene(string sceneNameP)
+    {
+        sceneName = sceneNameP;
+        Invoke("SceneLoader", sceneLoadWaitDuration);
+    }
     public void QuitGame()
     {
         Application.Quit();

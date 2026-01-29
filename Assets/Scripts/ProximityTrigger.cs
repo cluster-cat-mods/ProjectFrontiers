@@ -8,11 +8,14 @@ public class ProximityTrigger : MonoBehaviour
     public UnityEvent onTriggerStay;
     public UnityEvent onTriggerExit;
 
+    private bool debugBool;
+
     private void OnTriggerStay(Collider other)
     {
         onTriggerStay.Invoke();
         if(Input.GetKey(KeyCode.E))
         {
+            Debug.Log("E");
             onEButtonPress.Invoke();
         }
     }

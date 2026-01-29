@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class VariableUI : MonoBehaviour
 {
-    public TMP_Text textField;
+    [HideInInspector] public TMP_Text textField;
 
     private void Start()
     {

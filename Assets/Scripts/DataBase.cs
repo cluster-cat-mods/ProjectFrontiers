@@ -35,7 +35,7 @@ public class DataBase : MonoBehaviour
     {
         if (isProccesing)
         {
-            Debug.Log("proccesing data");
+            Debug.Log("Proccesing data");
 
             int amount = Mathf.Max(1, Mathf.RoundToInt(collectSpeed * Time.deltaTime));
             dataBaseStorageVar.integer -= amount;
@@ -56,7 +56,7 @@ public class DataBase : MonoBehaviour
     }
     public void InsertData()
     {
-        Debug.Log("inserted data");
+        Debug.Log("Inserted data");
 
         dataBaseMemVar.integer = playerMemVar.integer;
         playerMemVar.integer = 0;
@@ -69,13 +69,15 @@ public class DataBase : MonoBehaviour
     public void StartDataProccesing()
     {
         if (!isProccesing)
-        { 
+        {
+            Debug.Log("Started Processing");
             isProccesing = true;
+            Debug.Log(isProccesing);
         }
     }
     public void CollectData()
     {
-        Debug.Log("collected data");
+        Debug.Log("Collected data");
 
         playerDataVar.integer = dataBaseDataVar.integer;
         dataBaseDataVar.integer = 0;

@@ -41,7 +41,7 @@ public class CameraScript : MonoBehaviour
         }
 
         GameObject target = new GameObject("CinemachineCursorTarget");
-        target.transform.position = cam.transform.position + new Vector3(0, 0, 5);
+        target.transform.position = cam.transform.position + new Vector3(0, 0, -5);
         followTransform = target.transform;
         vcam.LookAt = followTransform;
     }

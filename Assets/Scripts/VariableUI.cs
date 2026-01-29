@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class VariableUI : MonoBehaviour
 {
-    private TMP_Text textField;
+    public TMP_Text textField;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class VariableUI : MonoBehaviour
     }
     public void SetTextField(IntVariable intVariableP)
     {
-         textField.text= intVariableP.integer.ToString();
+        textField.SetText(intVariableP.integer.ToString());
     }
     public void SetTextField(string stringP)
     {

@@ -42,7 +42,7 @@ public class ScoreSave : MonoBehaviour
         return JsonUtility.FromJson<ScoreData>(json);
     }
 
-    private void LoadScore()
+    public void LoadScore()
     {
         ScoreData data = LoadFromJSON();
         lastScore.integer = data.levelScore;

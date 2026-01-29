@@ -3466,6 +3466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113396951}
   - component: {fileID: 1113396950}
+  - component: {fileID: 1113396952}
   m_Layer: 0
   m_Name: StartManager
   m_TagString: Untagged
@@ -3488,6 +3489,18 @@ MonoBehaviour:
   onStartEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1113396952}
+        m_TargetAssemblyTypeName: ScoreSave, Assembly-CSharp
+        m_MethodName: LoadScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 935272091}
         m_TargetAssemblyTypeName: FloatVariableUI, Assembly-CSharp
         m_MethodName: SetTextField
@@ -3539,6 +3552,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 513712510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113396952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113396949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7054002d7b2706e428570fdc9e2c12f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreSave
+  playerDataVar: {fileID: 11400000, guid: b5226b1812c8a20419196f5af6e9dad9, type: 2}
+  timeScoreVar: {fileID: 11400000, guid: cb54045484c2cdd4d95757321dc8ae51, type: 2}
+  lastScore: {fileID: 11400000, guid: 9d7477ecbc38d19429daf4098ac821fb, type: 2}
+  highScore: {fileID: 11400000, guid: c1af3ad80ed5e444a838b7a4d10826d8, type: 2}
+  totalScore: {fileID: 11400000, guid: 711b12d2703968547b93a2852d244bd1, type: 2}
+  lastTime: {fileID: 11400000, guid: e0616e21920451d4799aa20e4896635c, type: 2}
 --- !u!1 &1118623795
 GameObject:
   m_ObjectHideFlags: 0

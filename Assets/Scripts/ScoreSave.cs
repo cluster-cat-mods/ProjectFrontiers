@@ -1,11 +1,19 @@
 using UnityEngine;
 using System.IO;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
 public class ScoreSave : MonoBehaviour
 {
+    [Header("PlayerVariables")]
     [SerializeField] private IntVariable playerDataVar;
     [SerializeField] private FloatVariable timeScoreVar;
+
+    [Header("ScoreVariables")]
+    [SerializeField] private IntVariable lastScore;
+    [SerializeField] private IntVariable highScore;
+    [SerializeField] private IntVariable totalScore;
+    [SerializeField] private FloatVariable lastTime;
     public void SaveToJSON()
     {
         ScoreData data = LoadFromJSON();
@@ -32,6 +40,15 @@ public class ScoreSave : MonoBehaviour
 
         string json = File.ReadAllText(path);
         return JsonUtility.FromJson<ScoreData>(json);
+    }
+
+    private void LoadScore()
+    {
+        ScoreData data = LoadFromJSON();
+        lastScore.integer = data.levelScore;
+        highScore.integer = data.highScore;
+        totalScore.integer = data.totalScore;
+        lastTime.fl = data.timeScore;
     }
 }
 [System.Serializable]

@@ -5990,9 +5990,9 @@ Transform:
   - {fileID: 6609493762490602015}
   - {fileID: 7656279064436602455}
   - {fileID: 4045616560360789608}
-  - {fileID: 8238036576993889816}
   - {fileID: 2551827451245283063}
   - {fileID: 779358612}
+  - {fileID: 8238036576993889816}
   m_Father: {fileID: 818903746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &570375702552353702
@@ -6224,6 +6224,7 @@ GameObject:
   - component: {fileID: 2551827451245283063}
   - component: {fileID: 1166364004711799619}
   - component: {fileID: 4953581582554843505}
+  - component: {fileID: 4953581582554843506}
   m_Layer: 0
   m_Name: Screen5
   m_TagString: zoomObject
@@ -6523,6 +6524,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4953581582554843506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204983402242387122}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11.233647, y: 100.04748, z: 183.79077}
+  m_Center: {x: -0.00003623963, y: 0.00022888184, z: -0.000007629397}
 --- !u!1 &5242074486059033337
 GameObject:
   m_ObjectHideFlags: 0

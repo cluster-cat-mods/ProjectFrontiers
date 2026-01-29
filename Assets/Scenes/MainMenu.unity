@@ -2113,7 +2113,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1663372011}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: SceneLoader
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4997,6 +4997,7 @@ MonoBehaviour:
   UIEvent:
     m_PersistentCalls:
       m_Calls: []
+  sceneLoadWaitDuration: 0
 --- !u!1 &1664670253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5580710019828355257, guid: 8c27cdd07ed339146864d9bfe8df7471, type: 3}

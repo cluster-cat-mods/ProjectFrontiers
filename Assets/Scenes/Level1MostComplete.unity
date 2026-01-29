@@ -57414,7 +57414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3819591153415572731, guid: f93ae115f133db94991e9049675279fa, type: 3}
       propertyPath: sceneLoadWaitDuration
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3819591153415572731, guid: f93ae115f133db94991e9049675279fa, type: 3}
       propertyPath: UIEvent.m_PersistentCalls.m_Calls.Array.size
@@ -118367,7 +118367,7 @@ GameObject:
   - component: {fileID: 8614299068987039277}
   - component: {fileID: 2537831116865870883}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: ReturnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139374,7 +139374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14463830}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: SceneLoader
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -331466,7 +331466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: Return
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be57eb72a644fba419eda2b59df48ccf, type: 2}
   m_sharedMaterial: {fileID: -9182452097245370024, guid: be57eb72a644fba419eda2b59df48ccf, type: 2}

@@ -78,7 +78,10 @@ public class CameraScript : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(followTransform.position, 0.5f);
+        if (followTransform != null)
+        {
+            Gizmos.DrawSphere(followTransform.position, 0.5f);
+        }
 
         Gizmos.color = Color.white;
         Gizmos.DrawLine(ray.origin, hit.point);

@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoostPlatform : MonoBehaviour
 {
     [SerializeField] Vector3 boostDirection;
     [SerializeField][Min(0)] float boostForce;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private Animator animator;
+    [SerializeField] private string animationName;
     
     private AudioSource audioSource;
     private Rigidbody rb;
@@ -16,13 +19,14 @@ public class BoostPlatform : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            rb = other.rigidbody;
+            rb = other.attachedRigidbody;
             rb.AddForce(boostForce * boostDirection, ForceMode.Impulse);
             audioSource.Play();
+            animator.Play(animationName);
         }
     }
 

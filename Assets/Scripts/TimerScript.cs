@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public class TimerScript : MonoBehaviour
 {
@@ -20,7 +22,15 @@ public class TimerScript : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);  
         foreach (var element in UIElements)
         {
-            element.text = time.Minutes.ToString() + ": " + time.Seconds.ToString() + ": " + time.Milliseconds.ToString();
+            if(time.Seconds < 10f)
+            {
+                element.text = time.Minutes.ToString() + ": 0" + time.Seconds.ToString() + ": " + (time.Milliseconds/10).ToString();
+            }
+            else if(time.Seconds >= 10f)
+            {
+                element.text = time.Minutes.ToString() + ": " + time.Seconds.ToString() + ": " + (time.Milliseconds/10).ToString();
+            }
+
         }
         
     }

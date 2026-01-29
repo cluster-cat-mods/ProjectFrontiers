@@ -9,16 +9,11 @@ public class ScreenColorChanger : MonoBehaviour
     [SerializeField] private Color deactiveColor;
 
     [SerializeField] private List<RawImage> screenIMGs;
-    [HideInInspector] public enum state
-    {
-        active,
-        deactive
-    }
-    public void SetColor(state stateP)
+    public void SetColor(int stateP)
     {
         foreach(RawImage img in screenIMGs)
         {
-            if (stateP == state.active)
+            if (stateP == 1)
             {
                 img.color = activeColor;
             }

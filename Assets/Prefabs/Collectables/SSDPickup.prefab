@@ -113,8 +113,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 60.70954
-  m_Center: {x: 7.844696, y: 10.709536, z: 0.0009765625}
+  m_Radius: 94.67892
+  m_Center: {x: 7.844696, y: 10.709539, z: 40.10535}
 --- !u!95 &286708013512843829
 Animator:
   serializedVersion: 7

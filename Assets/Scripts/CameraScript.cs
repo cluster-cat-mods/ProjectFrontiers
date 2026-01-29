@@ -41,7 +41,7 @@ public class CameraScript : MonoBehaviour
         }
 
         GameObject target = new GameObject("CinemachineCursorTarget");
-        target.transform.position = cam.transform.position + new Vector3(0, 0, 5);
+        target.transform.position = cam.transform.position + new Vector3(0, 0, -5);
         followTransform = target.transform;
         vcam.LookAt = followTransform;
     }
@@ -78,7 +78,10 @@ public class CameraScript : MonoBehaviour
         Physics.Raycast(ray, out RaycastHit hit);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(followTransform.position, 0.5f);
+        if (followTransform != null)
+        {
+            Gizmos.DrawSphere(followTransform.position, 0.5f);
+        }
 
         Gizmos.color = Color.white;
         Gizmos.DrawLine(ray.origin, hit.point);

@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class ScreenColorChanger : MonoBehaviour
 {
     [SerializeField] private Color activeColor;
     [SerializeField] private Color deactiveColor;
 
-    [SerializeField] private RawImage screenIMG;
+    [SerializeField] private List<RawImage> screenIMGs;
     private enum state
     {
         active,
@@ -14,13 +16,16 @@ public class ScreenColorChanger : MonoBehaviour
     }
     private void SetColor(state stateP)
     {
-        if (stateP == state.active)
+        foreach(RawImage img in screenIMGs)
         {
-            screenIMG.color = activeColor;
-        }
-        else
-        {
-            screenIMG.color = deactiveColor;
+            if (stateP == state.active)
+            {
+                img.color = activeColor;
+            }
+            else
+            {
+                img.color = deactiveColor;
+            }
         }
     }
 

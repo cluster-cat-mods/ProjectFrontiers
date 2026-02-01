@@ -18176,7 +18176,7 @@ PrefabInstance:
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7027453746913410348}
+      objectReference: {fileID: 1964971056}
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -33488,7 +33488,7 @@ PrefabInstance:
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7027453746913410348}
+      objectReference: {fileID: 1403232871}
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -33538,6 +33538,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
+--- !u!114 &1403232871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2218692086659506378, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
+  m_PrefabInstance: {fileID: 1403232869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2321aae46a6fadc4597f48f6340911f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenColorChanger
 --- !u!1 &1404405608
 GameObject:
   m_ObjectHideFlags: 0
@@ -42312,7 +42323,7 @@ PrefabInstance:
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 7027453746913410348}
+      objectReference: {fileID: 1525077971}
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -68569,6 +68580,10 @@ PrefabInstance:
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1868459389477870523}
+    - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7027453746913410348}
     - target: {fileID: 7833282479474695690, guid: da52e1da24a2ccc4ea65f6459c883913, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 

@@ -1266,11 +1266,10 @@ Transform:
   - {fileID: 1171374534}
   - {fileID: 529617241}
   - {fileID: 2052440558}
-  - {fileID: 1812639951}
+  - {fileID: 114154004}
   - {fileID: 1862786656}
   - {fileID: 5601974980712612981}
   - {fileID: 4190736242120502787}
-  - {fileID: 4165831402709337806}
   - {fileID: 472505648078915325}
   - {fileID: 1628922566}
   - {fileID: 1115812579}
@@ -2272,6 +2271,96 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 621f2ac18e23a2b44829031302af567f, type: 3}
+--- !u!1 &114154003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114154004}
+  - component: {fileID: 114154006}
+  - component: {fileID: 114154005}
+  m_Layer: 0
+  m_Name: SawbladeBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114154004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114154003}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1069.07, y: 3.769303, z: 2.2437565}
+  m_LocalScale: {x: 0.015149999, y: 0.0060099997, z: 0.016379999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 65814387}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &114154005
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114154003}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0683889bd13ca24449ebac394ee27605, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &114154006
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114154003}
+  m_Mesh: {fileID: -865335792945596701, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!1 &115797779
 GameObject:
   m_ObjectHideFlags: 0
@@ -6736,7 +6825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2cfcbbd234aab4db8cbfedba7c9655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoostPlatform
-  boostDirection: {x: -4.26, y: 1.51, z: 0}
+  boostDirection: {x: -1, y: 1, z: 0}
   boostForce: 161.2
   audioClip: {fileID: 8300000, guid: 36f161cd6443d7747a7da5aa4d07dc0a, type: 3}
   animator: {fileID: 0}
@@ -9917,6 +10006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SawbladeObstacle (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -12629,6 +12722,10 @@ PrefabInstance:
     - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Name
       value: SawbladeObstacle (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
@@ -24568,6 +24665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoosterPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6732143355225979067, guid: 60f1bf68eb416ad4984ed52553299f59, type: 3}
+      propertyPath: boostDirection.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25336,6 +25437,10 @@ PrefabInstance:
     - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Name
       value: SawbladeObstacle (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
@@ -26797,7 +26902,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3908720311600154999, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1287248267}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
 --- !u!4 &1171374534 stripped
@@ -27725,15 +27833,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.009999398
+      value: 0.017909922
       objectReference: {fileID: 0}
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.009999398
+      value: 0.017909922
       objectReference: {fileID: 0}
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.016381228
+      value: 0.029340418
       objectReference: {fileID: 0}
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27741,7 +27849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.34
+      value: 20.506
       objectReference: {fileID: 0}
     - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29524,6 +29632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SawbladeObstacle (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -30011,6 +30123,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7757580887462736024, guid: 212768103726ab84eb208e5709481a5f, type: 3}
   m_PrefabInstance: {fileID: 1283715581}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1287248266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287248267}
+  - component: {fileID: 1287248269}
+  - component: {fileID: 1287248268}
+  m_Layer: 0
+  m_Name: SawbladeBox (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1287248267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287248266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.11493713, w: 0.9933728}
+  m_LocalPosition: {x: -117, y: -233, z: -8}
+  m_LocalScale: {x: 1.4138836, y: 0.63392115, z: 1.0546349}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1171374534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.2}
+--- !u!23 &1287248268
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287248266}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0683889bd13ca24449ebac394ee27605, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1287248269
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287248266}
+  m_Mesh: {fileID: -865335792945596701, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!1001 &1290507417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35480,6 +35682,10 @@ PrefabInstance:
     - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Name
       value: SawbladeObstacle (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
@@ -43719,100 +43925,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5155512633932592504, guid: d66016cec355c844e9e38c84648e4d1c, type: 3}
   m_PrefabInstance: {fileID: 1810933348}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1812639950
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 65814387}
-    m_Modifications:
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.009999398
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.009999398
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.016381228
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -675.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 16.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.243764
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.12973857
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.99154824
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -165.091
-      objectReference: {fileID: 0}
-    - target: {fileID: 1363949768685700592, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: OnCollisionEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1868459389477870523}
-    - target: {fileID: 1363949768685700592, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: OnCollisionEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Respawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 1550365653533604346, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_Name
-      value: SawbladeObstacle (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8374243066789804251, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
---- !u!4 &1812639951 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1165525707693178448, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
-  m_PrefabInstance: {fileID: 1812639950}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814555264
 GameObject:
   m_ObjectHideFlags: 0
@@ -45194,6 +45306,10 @@ PrefabInstance:
     - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Name
       value: SawbladeObstacle (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2429599476900412082, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Height
@@ -49671,6 +49787,10 @@ PrefabInstance:
     - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_Name
       value: SawbladeObstacle (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992601294333681516, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031030922383526383, guid: 4d87748ec38e549498ad1ece09aee040, type: 3}
       propertyPath: m_IsTrigger
@@ -66498,28 +66618,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &455683085005874849
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255195546463423238}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5734befde9cc87b419de4eecf9eaaeb7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &456402687618269542
 Transform:
   m_ObjectHideFlags: 0
@@ -68769,55 +68867,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 242a4ccb6c55be840ae40fd565cceedc, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!23 &529795234534794684
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2288486704589533673}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 0683889bd13ca24449ebac394ee27605, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -71566,29 +71615,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!136 &597691464588509740
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628743185497679858}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 150
-  m_Height: 100
-  m_Direction: 2
-  m_Center: {x: 198.9, y: -18.2, z: 0}
 --- !u!1 &600852981059593190
 GameObject:
   m_ObjectHideFlags: 0
@@ -95243,21 +95269,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &1341261234160197114
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2288486704589533673}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00017473807, y: -64.07353, z: -0.00044951134}
-  m_LocalScale: {x: 1.5152696, y: 0.60109997, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4165831402709337806}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1342682215945755492
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -127079,24 +127090,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6158669965580484668}
   m_Mesh: {fileID: 4632908682742339997, guid: 3bb41847125cbb54489db6de56f6b737, type: 3}
---- !u!1 &2288486704589533673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1341261234160197114}
-  - component: {fileID: 8184761735171869401}
-  - component: {fileID: 529795234534794684}
-  m_Layer: 0
-  m_Name: SawbladeBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!23 &2289130768537238354
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -144079,55 +144072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!23 &2783169324432020227
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255195546463423238}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7912ed7c290f86e408e8dd53f8c7aa31, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &2784046572156694668
 Transform:
   m_ObjectHideFlags: 0
@@ -154222,25 +154166,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5200054880358819146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3078038208032358842
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3648992329783779198}
-  - component: {fileID: 5489303904805276714}
-  - component: {fileID: 8930778945753224344}
-  - component: {fileID: 8012780193515013284}
-  m_Layer: 0
-  m_Name: SawbladeBig
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &3079148034855398383
 Transform:
   m_ObjectHideFlags: 0
@@ -173098,26 +173023,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!1 &3628743185497679858
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4165831402709337806}
-  - component: {fileID: 4256323812598463854}
-  - component: {fileID: 7660739623571229557}
-  - component: {fileID: 597691464588509740}
-  - component: {fileID: 5724542926183373785}
-  m_Layer: 0
-  m_Name: SawbladeObstacle (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &3628869957481426068
 Transform:
   m_ObjectHideFlags: 0
@@ -173914,21 +173819,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &3648992329783779198
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078038208032358842}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.150726, y: -20.950142, z: -47.640728}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4165831402709337806}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3649276796065982996
 GameObject:
   m_ObjectHideFlags: 0
@@ -174787,14 +174677,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!33 &3679740385833357224
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255195546463423238}
-  m_Mesh: {fileID: 8382341876421641569, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!4 &3679953195541411571
 Transform:
   m_ObjectHideFlags: 0
@@ -190773,25 +190655,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8718767739079593180}
   m_Mesh: {fileID: -2955113962321591228, guid: ce091f870c7d90b4784e883a15ea25c2, type: 3}
---- !u!4 &4165831402709337806
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628743185497679858}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -565.83997, y: 20.339998, z: 2.243764}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.02}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4574369463816967891}
-  - {fileID: 5922187147612341577}
-  - {fileID: 3648992329783779198}
-  - {fileID: 1341261234160197114}
-  m_Father: {fileID: 65814387}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4167567746947568712
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -193483,25 +193346,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &4255195546463423238
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5922187147612341577}
-  - component: {fileID: 3679740385833357224}
-  - component: {fileID: 2783169324432020227}
-  - component: {fileID: 455683085005874849}
-  m_Layer: 0
-  m_Name: Sawblade1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &4255339766802400340
 GameObject:
   m_ObjectHideFlags: 0
@@ -193520,39 +193364,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &4256323812598463854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628743185497679858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d28a06f5eae105478d7b77fe1cb405a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionEventInvoker
-  OnCollisionEnterEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1868459389477870523}
-        m_TargetAssemblyTypeName: playerRespawn, Assembly-CSharp
-        m_MethodName: Respawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCollisionStayEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCollisionExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4257015622290340370
 GameObject:
   m_ObjectHideFlags: 0
@@ -204049,21 +203860,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3891513696216395744}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4574369463816967891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6062871883493602178}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -162.78647, y: -37.644943, z: 69.25166}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4165831402709337806}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4575090523014132384
 MeshFilter:
@@ -233320,14 +233116,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.930225, y: 87.31818, z: 23.347403}
   m_Center: {x: -158.5513, y: -31.08197, z: 19.222557}
---- !u!33 &5489303904805276714
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078038208032358842}
-  m_Mesh: {fileID: 6524927741791494700, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!33 &5489791506288623388
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -241713,29 +241501,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5724542926183373785
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628743185497679858}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 150
-  m_Height: 100
-  m_Direction: 2
-  m_Center: {x: -167.3, y: -18.2, z: 0}
 --- !u!1 &5726046623633619059
 GameObject:
   m_ObjectHideFlags: 0
@@ -248596,21 +248361,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &5922187147612341577
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4255195546463423238}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 196.6965, y: -32.144844, z: 34.685436}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4165831402709337806}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5922964358371589537
 GameObject:
   m_ObjectHideFlags: 0
@@ -249438,14 +249188,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5161126237064442443}
   m_Mesh: {fileID: 7337683239850546531, guid: aa617b21abc3a204786331e917f6602c, type: 3}
---- !u!33 &5945765921723532798
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6062871883493602178}
-  m_Mesh: {fileID: -318380812313391449, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!23 &5946585680954200275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -253586,25 +253328,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6062871883493602178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4574369463816967891}
-  - component: {fileID: 5945765921723532798}
-  - component: {fileID: 8970845686232803160}
-  - component: {fileID: 8731023897111977666}
-  m_Layer: 0
-  m_Name: Sawblade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &6063055949362167996
 Transform:
   m_ObjectHideFlags: 0
@@ -305093,29 +304816,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9040262764176010762}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7660739623571229557
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3628743185497679858}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 230
-  m_Height: 100
-  m_Direction: 2
-  m_Center: {x: 12.17, y: -12.08, z: 0}
 --- !u!4 &7661311058135258185
 Transform:
   m_ObjectHideFlags: 0
@@ -316217,28 +315917,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &8012780193515013284
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078038208032358842}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5734befde9cc87b419de4eecf9eaaeb7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8014185100511554881
 Transform:
   m_ObjectHideFlags: 0
@@ -321918,14 +321596,6 @@ Transform:
   - {fileID: 6421569976016922223}
   m_Father: {fileID: 9190791736854046834}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8184761735171869401
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2288486704589533673}
-  m_Mesh: {fileID: -865335792945596701, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
 --- !u!1 &8185115991382176808
 GameObject:
   m_ObjectHideFlags: 0
@@ -339939,28 +339609,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3891513696216395744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8731023897111977666
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6062871883493602178}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5734befde9cc87b419de4eecf9eaaeb7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!23 &8731855881305627142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -346888,55 +346536,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9029827201383985443}
   m_Mesh: {fileID: -318380812313391449, guid: ff6ba7c39126f134aa767bc21e3dce6e, type: 3}
---- !u!23 &8930778945753224344
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3078038208032358842}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7912ed7c290f86e408e8dd53f8c7aa31, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &8931944656359465231
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -348637,55 +348236,6 @@ Transform:
   - {fileID: 1616107989533546906}
   m_Father: {fileID: 4599969654932950802}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!23 &8970845686232803160
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6062871883493602178}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7912ed7c290f86e408e8dd53f8c7aa31, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!23 &8971129989106804194
 MeshRenderer:
   m_ObjectHideFlags: 0
